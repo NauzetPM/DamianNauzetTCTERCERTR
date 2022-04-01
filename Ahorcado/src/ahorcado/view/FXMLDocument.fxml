@@ -9,14 +9,14 @@
 <AnchorPane id="AnchorPane" prefHeight="626.0" prefWidth="1057.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ahorcado.controller.FXMLDocumentController">
     <children>
         <Label fx:id="labelTitulo" layoutX="39.0" layoutY="31.0" minHeight="16" minWidth="69" prefHeight="16.0" prefWidth="117.0" text="Ahorcado" />
-      <TextField fx:id="textFieldPalabraSecreta" layoutX="39.0" layoutY="494.0" />
-      <TextField fx:id="textFieldCaracteresAdivinar" layoutX="454.0" layoutY="107.0" prefHeight="24.0" prefWidth="200.0" />
-      <TextField fx:id="textFieldPalabraResolver" layoutX="812.0" layoutY="107.0" prefHeight="24.0" prefWidth="200.0" />
+      <TextField fx:id="textFieldCaracteresAdivinar" layoutX="454.0" layoutY="107.0" onAction="#ejecutarEnter" prefHeight="24.0" prefWidth="200.0" />
+      <TextField fx:id="textFieldPalabraResolver" layoutX="812.0" layoutY="107.0" onAction="#ejecutarEnter" prefHeight="24.0" prefWidth="200.0" />
       <Label fx:id="labelCaractertesAdivinar" layoutX="469.0" layoutY="66.0" prefHeight="24.0" prefWidth="171.0" text="Caracteres a adivinar" />
       <Label fx:id="labelPalabrasAdivinar" layoutX="827.0" layoutY="70.0" prefHeight="16.0" prefWidth="171.0" text="Palabras para resolver" />
       <Label layoutX="675.0" layoutY="39.0" prefHeight="16.0" prefWidth="107.0" text="Introduce aqui" />
-      <ListView fx:id="textAreaCaracteresIntroducidos" layoutX="454.0" layoutY="275.0" prefHeight="200.0" prefWidth="200.0" />
-      <ListView layoutX="798.0" layoutY="275.0" prefHeight="200.0" prefWidth="200.0" />
-      <Canvas fx:id="visualAhorcado" height="372.0" layoutX="39.0" layoutY="90.0" width="322.0" />
+      <ListView fx:id="listViewCaracteresIntroducidos" layoutX="454.0" layoutY="275.0" prefHeight="200.0" prefWidth="200.0" />
+      <ListView fx:id="listViewPalabrasIntentadas" layoutX="813.0" layoutY="275.0" prefHeight="200.0" prefWidth="200.0" />
+      <Canvas fx:id="canvasAhorcado" height="372.0" layoutX="39.0" layoutY="90.0" width="322.0" />
+      <Label fx:id="labelPalabraSecreta" layoutX="62.0" layoutY="502.0" prefHeight="16.0" prefWidth="200.0" />
     </children>
 </AnchorPane>

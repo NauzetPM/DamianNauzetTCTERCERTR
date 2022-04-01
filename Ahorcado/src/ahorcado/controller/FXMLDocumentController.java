@@ -36,8 +36,6 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private Label labelTitulo;
     @FXML
-    private TextField textFieldPalabraSecreta;
-    @FXML
     private TextField textFieldCaracteresAdivinar;
     @FXML
     private TextField textFieldPalabraResolver;
@@ -45,29 +43,73 @@ public class FXMLDocumentController implements Initializable {
     private Label labelCaractertesAdivinar;
     @FXML
     private Label labelPalabrasAdivinar;
-    @FXML
-    private ListView<?> textAreaCaracteresIntroducidos;
-    @FXML
     private Canvas visualAhorcado;
 
      GraphicsContext gc;
+    @FXML
+    private Label labelPalabraSecreta;
+    @FXML
+    private ListView<Character> listViewCaracteresIntroducidos;//introducir char??
+    @FXML
+    private ListView<String> listViewPalabrasIntentadas;
+    @FXML
+    private Canvas canvasAhorcado;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-         gc = visualAhorcado.getGraphicsContext2D();
+         gc = canvasAhorcado.getGraphicsContext2D();
         
-        visualAhorcado.setFocusTraversable(true); 
+        canvasAhorcado.setFocusTraversable(true); 
 
         generarAhorcado();
     }
-    
+    /**
+     * Metodo que genera la escena inicial del ahorcado
+     */
     public void generarAhorcado(){
         
         gc.setFill(Color.BLACK);
-        gc.fillRect(20, 20, 20, 100);
+        gc.fillRect(20, 272, 20, 100); //coordenadas (X, Y, ancho, largo)
         gc.setFill(Color.BLACK);
-        gc.fillRect(10, 120, 40,10);
+        gc.fillRect(10, 362, 40,10);
         
     }    
+    
+    public void generarCabeza(){
+    
+    }
+    
+    public void generarCuerpo(){
+    
+    }
+    
+    public void generarBrazoIzquierdo(){
+    
+    }
+    
+    public void generarBrazoDerecho(){
+    
+    }
+    
+    public void generarPiernaIzquierda(){
+    
+    }
+    
+    public void generarPiernaDerecha(){
+    
+    }
+    
+    /**
+     * Metodo que guarda el texto introducido en su lista correspondiente
+     * @param event 
+     */
+    @FXML
+    private void ejecutarEnter(ActionEvent event) {
+        listViewCaracteresIntroducidos.getItems().add(textFieldCaracteresAdivinar.getText().charAt(0)); //solo recoge el primer caracter de un string
+        listViewPalabrasIntentadas.getItems().add(textFieldPalabraResolver.getText());
+        textFieldCaracteresAdivinar.clear();
+        textFieldPalabraResolver.clear();
+        
+    }
     
 }
