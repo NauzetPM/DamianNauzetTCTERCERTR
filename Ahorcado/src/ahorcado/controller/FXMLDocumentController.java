@@ -11,6 +11,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
@@ -35,9 +36,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private Label labelPalabrasAdivinar;
     @FXML
-    private TextArea textAreaCaracteresIntroducidos;
-    @FXML
-    private TextArea textAreaPalabrasIntroducidas;
+    private ListView<?> textAreaCaracteresIntroducidos;
     @FXML
     private Pane visualAhorcado;
     
