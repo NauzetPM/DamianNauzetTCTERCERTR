@@ -10,5 +10,11 @@ package ahorcado.model;
  * @author daw
  */
 public class Ahorcado {
-    
+    public String palabraSecreta;
+    public int errores;
+    public String palabraRayada;
+    public boolean victoria;
+    public final String[] palabras={
+        
+    };
 }
