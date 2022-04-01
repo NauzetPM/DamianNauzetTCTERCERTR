@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ahorcado.controller.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="626.0" prefWidth="1057.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/16" fx:controller="ahorcado.controller.FXMLDocumentController">
     <children>
-        <Button layoutX="126" layoutY="90" text="Click Me!" onAction="#handleButtonAction" fx:id="button" />
-        <Label layoutX="126" layoutY="120" minHeight="16" minWidth="69" fx:id="label" />
+        <Label fx:id="labelTitulo" layoutX="39.0" layoutY="31.0" minHeight="16" minWidth="69" prefHeight="16.0" prefWidth="117.0" text="Ahorcado" />
+      <Pane fx:id="visualAhorcado" layoutX="33.0" layoutY="90.0" prefHeight="369.0" prefWidth="318.0" />
+      <TextField fx:id="textFieldPalabraSecreta" layoutX="39.0" layoutY="494.0" />
+      <TextField fx:id="textFieldCaracteresAdivinar" layoutX="454.0" layoutY="107.0" />
+      <TextField fx:id="textFieldPalabraResolver" layoutX="812.0" layoutY="107.0" />
+      <Label fx:id="labelCaractertesAdivinar" layoutX="458.0" layoutY="66.0" prefHeight="24.0" prefWidth="171.0" text="Caracteres a adivinar" />
+      <Label fx:id="labelPalabrasAdivinar" layoutX="812.0" layoutY="70.0" prefHeight="16.0" prefWidth="171.0" text="Palabras para resolver" />
+      <Label layoutX="661.0" layoutY="39.0" prefHeight="16.0" prefWidth="107.0" text="Introduce aqui" />
+      <TextArea fx:id="textAreaCaracteresIntroducidos" layoutX="440.0" layoutY="268.0" prefHeight="200.0" prefWidth="200.0" />
+      <TextArea fx:id="textAreaPalabrasIntroducidas" layoutX="798.0" layoutY="268.0" prefHeight="200.0" prefWidth="200.0" />
     </children>
 </AnchorPane>
