@@ -8,3 +8,24 @@ and open the template in the editor.
     Author     : daw
 */
 
+#anchorPane {
+    -fx-background-color: white;
+}
+
+.label {
+    -fx-text-fill: black;
+    -fx-border-color: black;
+    -fx-background-color: white;
+    -fx-text-alignment: justify;
+}
+
+.listView {
+    -fx-text-fill: black;
+    -fx-border-color: black;
+    -fx-background-color: white;
+}
+
+.txtField {
+    -fx-border-color: black;
+    -fx-alignment: CENTER;
+}

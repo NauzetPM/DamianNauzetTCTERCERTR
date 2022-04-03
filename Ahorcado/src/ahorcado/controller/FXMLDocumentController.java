@@ -19,6 +19,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 
@@ -54,6 +55,8 @@ public class FXMLDocumentController implements Initializable {
     private ListView<String> listViewPalabrasIntentadas;
     @FXML
     private Canvas canvasAhorcado;
+    @FXML
+    private AnchorPane anchorPane;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -105,8 +108,8 @@ public class FXMLDocumentController implements Initializable {
      */
     @FXML
     private void ejecutarEnter(ActionEvent event) {
+        listViewPalabrasIntentadas.getItems().add(textFieldPalabraResolver.getText());//da error a la hora de introducir un String
         listViewCaracteresIntroducidos.getItems().add(textFieldCaracteresAdivinar.getText().charAt(0)); //solo recoge el primer caracter de un string
-        listViewPalabrasIntentadas.getItems().add(textFieldPalabraResolver.getText());
         textFieldCaracteresAdivinar.clear();
         textFieldPalabraResolver.clear();
         
