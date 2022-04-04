@@ -104,12 +104,18 @@ public class FXMLDocumentController implements Initializable {
      * @param event 
      */
     @FXML
-    private void ejecutarEnter(ActionEvent event) {
+    private void ejecutarEnterCaracter(ActionEvent event) {
         listViewCaracteresIntroducidos.getItems().add(textFieldCaracteresAdivinar.getText().charAt(0)); //solo recoge el primer caracter de un string
-        listViewPalabrasIntentadas.getItems().add(textFieldPalabraResolver.getText());
         textFieldCaracteresAdivinar.clear();
-        textFieldPalabraResolver.clear();
-        
+    }
+    /**
+     * Metodo que guarda el texto introducido en su lista correspondiente
+     * @param event 
+     */
+    @FXML
+    private void ejecutarEnterPalabra(ActionEvent event) {
+         listViewPalabrasIntentadas.getItems().add(textFieldPalabraResolver.getText());
+         textFieldPalabraResolver.clear();
     }
     
 }
