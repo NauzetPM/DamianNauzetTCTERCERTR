@@ -15,28 +15,39 @@ public class Ahorcado {
     public String palabraSecreta;
     public int errores;
     public boolean victoria;
-    public String palabraAadivinarConGuiones;
-    public String[] ArrayPalabraAadivinar;
     private ArrayList<String> historialLetras; 
     public final String[] palabras={
        
     };//poner palabras en el String
     
     /**
-     * Construtor por defecto
+     * Construtor
      */
     public Ahorcado(){
-        
+        this.errores=0;
+        this.victoria=false;
+        generarPalabraSecreta();
     }
     /**
      * Metodo que suma 1 a los errores
      */
-    public void AumentarError() {
-
-        this.errores += 1;
+    public void aumentarErrorLetra(String letra) {
+        addLetra(letra);
+     if (!palabraSecreta.contains(letra)) {
+    this.errores += 1;
+    }else{
+         ocultarPalabra();
+     }
+        
 
     }
-
+   public void aumentarErrorPalabra(String palabra) {
+     if (palabraSecreta!=palabra) {
+    this.errores += 1;
+    }else {
+         ocultarPalabra();
+     }
+   }
 
     public void addLetra(String letra) {
 
@@ -61,7 +72,7 @@ public class Ahorcado {
        /**
         * Metodo que elige una palabra aleatoriamente del String
         */
-       public void GenerarPalabraSecreta(){
+       public void generarPalabraSecreta(){
             this.palabraSecreta=this.palabras[(int) ((Math.random() * this.palabras.length)+1)];
        }
        
