@@ -5,9 +5,11 @@
  */
 package ahorcado.model;
 
+import java.util.ArrayList;
+
 /**
  *
- * @author daw
+ * @author Nauzet
  */
 public class Ahorcado {
     public String palabraSecreta;
@@ -15,8 +17,9 @@ public class Ahorcado {
     public boolean victoria;
     public String palabraAadivinarConGuiones;
     public String[] ArrayPalabraAadivinar;
+    private ArrayList<String> historialLetras; 
     public final String[] palabras={
-        
+       
     };//poner palabras en el String
     
     /**
@@ -25,22 +28,6 @@ public class Ahorcado {
     public Ahorcado(){
         
     }
-    
-    /**
-     * Getter de errores
-     * @return el numero de errores que llevas
-     */
-     public Integer getNumErrores() {
-        return errores;
-    }
-    /**
-     * Setter de errores
-     * @param errores 
-     */
-    public void setFallos(Integer errores) {
-        this.errores = errores;
-    }
-    
     /**
      * Metodo que suma 1 a los errores
      */
@@ -49,65 +36,62 @@ public class Ahorcado {
         this.errores += 1;
 
     }
-    /**
-     * Getter de la palabra a adivinar 
-     * @return 
-     */
-      public String getPalabraSecreta() {
-        return palabraSecreta;
+
+
+    public void addLetra(String letra) {
+
+        historialLetras.add(letra);
+
     }
-      
       /**
        * Metodo que dependiendo de la palabra secreta genera los guiones 
        * necesario y genera un array de String en el que esta la palabra secreta 
        * separada en caracteres
        */
        public void ocultarPalabra () {
-        StringBuilder paOculta = new StringBuilder();/*Nota el StringBuilder es 
-        similar al String pero agrega cosas como el .append que añada al
-        final del String algo  
-        */
-        int nLetras = palabraSecreta.length();
-        String[] palabraOculta = new String[nLetras];
-        for (int i = 0; i < palabraOculta.length; i++) {
-            palabraOculta[i] = "_";
-            paOculta.append("_ ");
-        }
-        this.palabraAadivinarConGuiones = paOculta.toString();
-        this.ArrayPalabraAadivinar = palabraOculta;
+        String palabra = this.palabraSecreta;
+        String letraselegidas = "";
+        for (int i = 0; i < historialLetras.size(); i++) {
+            letraselegidas += historialLetras.get(i);
     }
-       
-       /**
-        * Getter del String palabraAadivinarConGuiones
-        * @return palabraAadivinarConGuiones
-        */
-       public String getpalabraAadivinarConGuiones(){
-           return palabraAadivinarConGuiones;
-       }
-       /**
-        * Getter del String[] getArrayPalabraAadivinar
-        * @return getArrayPalabraAadivinar
-        */
-       public String[] getArrayPalabraAadivinar(){
-           return ArrayPalabraAadivinar;
-       }
-       /**
-        * Setter del String palabraAadivinarConGuiones
-        * @return palabraAadivinarConGuiones
-        */
-       public void  setpalabraAadivinarConGuiones(String palabraActualizada){
-           this.palabraAadivinarConGuiones=palabraActualizada;
        }
 
+
+
        /**
-        * Setter del String[] getArrayPalabraAadivinar
-        * @return getArrayPalabraAadivinar
+        * Metodo que elige una palabra aleatoriamente del String
         */
-       public void setArrayPalabraAadivinar(String[] ArrayPalabraActualizada){
-           this.ArrayPalabraAadivinar=ArrayPalabraActualizada;
-       }
-       
        public void GenerarPalabraSecreta(){
             this.palabraSecreta=this.palabras[(int) ((Math.random() * this.palabras.length)+1)];
        }
+       
+       //GETTERS Y SETTERS
+      public String getPalabraSecreta() {
+        return palabraSecreta;
+    }
+      public String getHistorialLetras() {
+        String letrasStr = "";
+      
+            for (String Letra : historialLetras) {
+                letrasStr += Letra;
+            }
+        String historialStr = "";
+        
+        if(letrasStr.length()>0){
+            for (int i = 0; i < letrasStr.length(); i++) {
+                historialStr += letrasStr.charAt(i) + ",";
+            }
+        }
+        
+        
+        return historialStr;
+    }
+    public Integer getNumErrores() {
+    return errores;
+    }
+
+    public void setFallos(Integer errores) {
+        this.errores = errores;
+    }
+
 }
