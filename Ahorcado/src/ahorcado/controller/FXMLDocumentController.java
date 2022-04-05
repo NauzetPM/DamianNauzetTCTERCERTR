@@ -159,7 +159,7 @@ public class FXMLDocumentController implements Initializable {
     private void ejecutarEnterPalabra(ActionEvent event) {
          listViewPalabrasIntentadas.getItems().add(textFieldPalabraResolver.getText());
           String palabraIntroducida=textFieldPalabraResolver.getText();
-         partida.aumentarErrorLetra(palabraIntroducida);  
+         partida.aumentarErrorPalabra(palabraIntroducida);  
         if(partida.getNumErrores()==1){
             generarCabeza();
         }

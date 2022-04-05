@@ -45,7 +45,7 @@ public class Ahorcado {
 
     }
    public void aumentarErrorPalabra(String palabra) {
-     if (palabraSecreta!=palabra) {
+     if (!palabraSecreta.equals(palabra)) {
     this.errores += 1;
     }else {
          compararOcultarPalabra();
