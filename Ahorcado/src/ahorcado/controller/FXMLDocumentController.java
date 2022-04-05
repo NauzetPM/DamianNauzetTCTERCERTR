@@ -49,6 +49,11 @@ public class FXMLDocumentController implements Initializable {
 
      GraphicsContext gc;
      GraphicsContext cabeza;
+     GraphicsContext cuerpo;
+     GraphicsContext brazoIzquierdo;
+     GraphicsContext brazoDerecho;
+     GraphicsContext piernaIzquierda;
+     GraphicsContext piernaDerecha;
      
     @FXML
     private Label labelPalabraSecreta;
@@ -71,6 +76,12 @@ public class FXMLDocumentController implements Initializable {
         
         gc = canvasAhorcado.getGraphicsContext2D();
         cabeza = canvasAhorcado.getGraphicsContext2D();
+        cuerpo = canvasAhorcado.getGraphicsContext2D();
+        brazoIzquierdo = canvasAhorcado.getGraphicsContext2D();
+        brazoDerecho = canvasAhorcado.getGraphicsContext2D();
+        piernaIzquierda = canvasAhorcado.getGraphicsContext2D();
+        piernaDerecha = canvasAhorcado.getGraphicsContext2D();
+        
         
         canvasAhorcado.setFocusTraversable(true); 
         
@@ -96,23 +107,23 @@ public class FXMLDocumentController implements Initializable {
     }
     
     public void generarCuerpo(){
-    
+        cuerpo.fillOval(92, 232, 20, 40);
     }
     
     public void generarBrazoIzquierdo(){
-    
+        brazoIzquierdo.fillRect(80, 250, 5, 40);
     }
     
     public void generarBrazoDerecho(){
-    
+        brazoDerecho.fillRect(110, 250, 5, 40); //primera parte en generarse tras el cuerpo
     }
     
     public void generarPiernaIzquierda(){
-    
+        piernaIzquierda.fillRect(80, 200, 5, 20);
     }
     
     public void generarPiernaDerecha(){
-    
+       piernaDerecha.fillRect(110, 270, 5, 40);
     }
     
     /**
@@ -147,6 +158,7 @@ public class FXMLDocumentController implements Initializable {
         if(partida.getNumErrores()==7){
             generarPiernaIzquierda();
         }
+        //EL MÉTODO ANTERIOR GENERA EL CUERPO DOS VECES
         }
        labelPalabraSecreta.setText(partida.compararOcultarPalabra());
         
