@@ -17,7 +17,7 @@ public class Ahorcado {
     public boolean victoria;
     private ArrayList<String> historialLetras; 
     public final String[] palabras={
-       
+       "prueba"
     };//poner palabras en el String
     
     /**
@@ -36,7 +36,7 @@ public class Ahorcado {
      if (!palabraSecreta.contains(letra)) {
     this.errores += 1;
     }else{
-         ocultarPalabra();
+         compararOcultarPalabra();
      }
         
 
@@ -45,7 +45,7 @@ public class Ahorcado {
      if (palabraSecreta!=palabra) {
     this.errores += 1;
     }else {
-         ocultarPalabra();
+         compararOcultarPalabra();
      }
    }
 
@@ -59,12 +59,15 @@ public class Ahorcado {
        * necesario y genera un array de String en el que esta la palabra secreta 
        * separada en caracteres
        */
-       public void ocultarPalabra () {
+    public String compararOcultarPalabra () {
         String palabra = this.palabraSecreta;
         String letraselegidas = "";
         for (int i = 0; i < historialLetras.size(); i++) {
             letraselegidas += historialLetras.get(i);
     }
+        String palabraconguiones = palabra.replaceAll("[^ " + letraselegidas + "]", "_ ");
+
+        return palabraconguiones;
        }
 
 

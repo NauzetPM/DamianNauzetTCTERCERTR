@@ -66,7 +66,7 @@ public class FXMLDocumentController implements Initializable {
         canvasAhorcado.setFocusTraversable(true); 
         
         
-        
+        labelPalabraSecreta.setText(partida.compararOcultarPalabra());
         generarAhorcado();
     }
     /**
@@ -138,7 +138,7 @@ public class FXMLDocumentController implements Initializable {
             generarPiernaIzquierda();
         }
         }
-       
+       labelPalabraSecreta.setText(partida.compararOcultarPalabra());
         
         
         textFieldCaracteresAdivinar.clear();
@@ -173,7 +173,7 @@ public class FXMLDocumentController implements Initializable {
         if(partida.getNumErrores()==7){
             generarPiernaIzquierda();
         }
-         
+        labelPalabraSecreta.setText(partida.compararOcultarPalabra()); 
          
          
          
