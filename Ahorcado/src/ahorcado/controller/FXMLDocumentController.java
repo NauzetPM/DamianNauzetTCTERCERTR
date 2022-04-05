@@ -6,6 +6,8 @@
 package ahorcado.controller;
 
 
+import ahorcado.model.Ahorcado;
+import com.sun.deploy.config.JREInfo;
 import static java.lang.System.gc;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -55,12 +57,16 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private Canvas canvasAhorcado;
     
+    
+    Ahorcado partida = new Ahorcado();
     @Override
     public void initialize(URL url, ResourceBundle rb) {
          gc = canvasAhorcado.getGraphicsContext2D();
         
         canvasAhorcado.setFocusTraversable(true); 
-
+        
+        
+        
         generarAhorcado();
     }
     /**
@@ -106,6 +112,35 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void ejecutarEnterCaracter(ActionEvent event) {
         listViewCaracteresIntroducidos.getItems().add(textFieldCaracteresAdivinar.getText().charAt(0)); //solo recoge el primer caracter de un string
+        String Caracter = "a";
+        String letraIntroducida=textFieldCaracteresAdivinar.getText();
+        if (Caracter.length() == letraIntroducida.length()){
+        partida.aumentarErrorLetra(letraIntroducida);  
+        if(partida.getNumErrores()==1){
+            generarCabeza();
+        }
+        if(partida.getNumErrores()==2){
+            generarCuerpo();
+        }
+        if(partida.getNumErrores()==3){
+            generarCuerpo();
+        }
+        if(partida.getNumErrores()==4){
+            generarBrazoDerecho();
+        }
+        if(partida.getNumErrores()==5){
+            generarBrazoIzquierdo();
+        }
+        if(partida.getNumErrores()==6){
+            generarPiernaDerecha();
+        }
+        if(partida.getNumErrores()==7){
+            generarPiernaIzquierda();
+        }
+        }
+       
+        
+        
         textFieldCaracteresAdivinar.clear();
     }
     /**
@@ -115,6 +150,33 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void ejecutarEnterPalabra(ActionEvent event) {
          listViewPalabrasIntentadas.getItems().add(textFieldPalabraResolver.getText());
+          String palabraIntroducida=textFieldPalabraResolver.getText();
+         partida.aumentarErrorLetra(palabraIntroducida);  
+        if(partida.getNumErrores()==1){
+            generarCabeza();
+        }
+        if(partida.getNumErrores()==2){
+            generarCuerpo();
+        }
+        if(partida.getNumErrores()==3){
+            generarCuerpo();
+        }
+        if(partida.getNumErrores()==4){
+            generarBrazoDerecho();
+        }
+        if(partida.getNumErrores()==5){
+            generarBrazoIzquierdo();
+        }
+        if(partida.getNumErrores()==6){
+            generarPiernaDerecha();
+        }
+        if(partida.getNumErrores()==7){
+            generarPiernaIzquierda();
+        }
+         
+         
+         
+         
          textFieldPalabraResolver.clear();
     }
     
