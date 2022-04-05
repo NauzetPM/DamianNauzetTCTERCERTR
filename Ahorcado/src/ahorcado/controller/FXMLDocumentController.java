@@ -48,6 +48,8 @@ public class FXMLDocumentController implements Initializable {
     private Canvas visualAhorcado;
 
      GraphicsContext gc;
+     GraphicsContext cabeza;
+     
     @FXML
     private Label labelPalabraSecreta;
     @FXML
@@ -66,7 +68,9 @@ public class FXMLDocumentController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         partida = new Ahorcado();
         labelPalabraSecreta.setText(partida.compararOcultarPalabra());
+        
         gc = canvasAhorcado.getGraphicsContext2D();
+        cabeza = canvasAhorcado.getGraphicsContext2D();
         
         canvasAhorcado.setFocusTraversable(true); 
         
@@ -81,16 +85,14 @@ public class FXMLDocumentController implements Initializable {
         
         gc.setFill(Color.BLACK);
         gc.fillRect(20, 172, 20, 200); //coordenadas (X, Y, ancho, largo)
-        gc.setFill(Color.BLACK);
         gc.fillRect(10, 362, 40,10);
-        gc.setFill(Color.BLACK);
         gc.fillRect(20,172, 100, 20);
-        
+        gc.fillRect(100, 172, 5, 40);
         
     }    
     
     public void generarCabeza(){
-        
+        cabeza.fillRoundRect(0, 0, 0, 0, 0, 0);
     }
     
     public void generarCuerpo(){
