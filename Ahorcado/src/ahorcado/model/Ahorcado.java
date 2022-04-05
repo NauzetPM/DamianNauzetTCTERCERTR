@@ -48,6 +48,7 @@ public class Ahorcado {
      if (!palabraSecreta.equals(palabra)) {
     this.errores += 1;
     }else {
+         addLetra(palabra);
          compararOcultarPalabra();
      }
    }

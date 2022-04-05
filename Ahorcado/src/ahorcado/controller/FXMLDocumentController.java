@@ -92,7 +92,7 @@ public class FXMLDocumentController implements Initializable {
     }    
     
     public void generarCabeza(){
-        cabeza.fillRoundRect(0, 0, 0, 0, 0, 0);
+        cabeza.fillRoundRect(92, 212, 20, 20, 20, 20);
     }
     
     public void generarCuerpo(){
