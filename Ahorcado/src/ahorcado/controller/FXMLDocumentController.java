@@ -80,14 +80,17 @@ public class FXMLDocumentController implements Initializable {
     public void generarAhorcado(){
         
         gc.setFill(Color.BLACK);
-        gc.fillRect(20, 272, 20, 100); //coordenadas (X, Y, ancho, largo)
+        gc.fillRect(20, 172, 20, 200); //coordenadas (X, Y, ancho, largo)
         gc.setFill(Color.BLACK);
         gc.fillRect(10, 362, 40,10);
+        gc.setFill(Color.BLACK);
+        gc.fillRect(20,172, 100, 20);
+        
         
     }    
     
     public void generarCabeza(){
-    
+        
     }
     
     public void generarCuerpo(){
