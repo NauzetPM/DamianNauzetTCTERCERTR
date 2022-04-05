@@ -58,15 +58,18 @@ public class FXMLDocumentController implements Initializable {
     private Canvas canvasAhorcado;
     
     
-    Ahorcado partida = new Ahorcado();
+    Ahorcado partida ; 
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-         gc = canvasAhorcado.getGraphicsContext2D();
+        partida = new Ahorcado();
+        labelPalabraSecreta.setText(partida.compararOcultarPalabra());
+        gc = canvasAhorcado.getGraphicsContext2D();
         
         canvasAhorcado.setFocusTraversable(true); 
         
         
-        labelPalabraSecreta.setText(partida.compararOcultarPalabra());
+        
         generarAhorcado();
     }
     /**
