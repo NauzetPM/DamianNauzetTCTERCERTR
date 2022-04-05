@@ -59,6 +59,8 @@ public class FXMLDocumentController implements Initializable {
     
     
     Ahorcado partida ; 
+    @FXML
+    private Label labelIntroduce;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {

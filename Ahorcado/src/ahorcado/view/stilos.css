@@ -7,4 +7,43 @@ and open the template in the editor.
     Created on : 01-abr-2022, 19:16:06
     Author     : daw
 */
+#labelTitulo{
+    -fx-alignment: center;
+}
 
+#labelCaractertesAdivinar{
+    -fx-alignment: center;
+}
+
+#labelIntroduce{
+    -fx-alignment: center;
+}
+
+#labelPalabrasAdivinar{
+    -fx-alignment: center;
+}
+
+.label {
+    -fx-text-fill: black;
+    -fx-border-color: black;
+    -fx-background-color: white;
+    -fx-text-alignment: justify;
+    
+}
+
+#labelPalabraSecreta{
+    -fx-text-fill: black;
+    -fx-border-color: white;
+    -fx-alignment: center;
+}
+
+.listView {
+    -fx-text-fill: black;
+    -fx-border-color: black;
+    -fx-background-color: white;
+}
+
+.txtField {
+    -fx-border-color: black;
+    -fx-alignment: CENTER;
+}
