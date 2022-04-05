@@ -14,8 +14,10 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
@@ -64,7 +66,8 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private Canvas canvasAhorcado;
     
-    
+    Alert Perder;
+    Alert Ganar;
     Ahorcado partida ; 
     @FXML
     private Label labelIntroduce;
@@ -73,6 +76,8 @@ public class FXMLDocumentController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         partida = new Ahorcado();
         labelPalabraSecreta.setText(partida.compararOcultarPalabra());
+        Perder = new Alert(Alert.AlertType.INFORMATION ,"Perdiste la palabra secreta era"+ partida.getPalabraSecreta());
+        Ganar = new Alert(Alert.AlertType.INFORMATION ,"Ganaste!!");
         
         gc = canvasAhorcado.getGraphicsContext2D();
         cabeza = canvasAhorcado.getGraphicsContext2D();
@@ -125,6 +130,28 @@ public class FXMLDocumentController implements Initializable {
     public void generarPiernaDerecha(){
        piernaDerecha.fillRect(110, 270, 5, 40);
     }
+    public void terminarPartidaPerdida(){
+            Perder.showAndWait();
+            limpiar();
+            
+    }
+    public void terminarPartidaGanar(){
+        Ganar.showAndWait();
+        limpiar();
+    }
+    public void limpiar(){
+            textFieldCaracteresAdivinar.disableProperty();
+            textFieldPalabraResolver.disableProperty();
+            listViewCaracteresIntroducidos.disableProperty();
+            listViewPalabrasIntentadas.disableProperty();
+            textFieldCaracteresAdivinar.setOpacity(0);
+            textFieldPalabraResolver.setOpacity(0);
+            listViewCaracteresIntroducidos.setOpacity(0);
+            listViewPalabrasIntentadas.setOpacity(0);
+            canvasAhorcado.setOpacity(0);
+            
+            
+    }
     
     /**
      * Metodo que guarda el texto introducido en su lista correspondiente
@@ -144,21 +171,23 @@ public class FXMLDocumentController implements Initializable {
             generarCuerpo();
         }
         if(partida.getNumErrores()==3){
-            generarCuerpo();
-        }
-        if(partida.getNumErrores()==4){
             generarBrazoDerecho();
         }
-        if(partida.getNumErrores()==5){
+        if(partida.getNumErrores()==4){
             generarBrazoIzquierdo();
         }
-        if(partida.getNumErrores()==6){
+        if(partida.getNumErrores()==5){
             generarPiernaDerecha();
         }
-        if(partida.getNumErrores()==7){
+        if(partida.getNumErrores()==6){
             generarPiernaIzquierda();
+            
+            terminarPartidaPerdida();
+            
         }
-        //EL MÉTODO ANTERIOR GENERA EL CUERPO DOS VECES
+        if(partida.compararOcultarPalabra()==partida.getPalabraSecreta()){
+            terminarPartidaGanar();
+        }
         }
        labelPalabraSecreta.setText(partida.compararOcultarPalabra());
         
@@ -181,20 +210,24 @@ public class FXMLDocumentController implements Initializable {
             generarCuerpo();
         }
         if(partida.getNumErrores()==3){
-            generarCuerpo();
-        }
-        if(partida.getNumErrores()==4){
             generarBrazoDerecho();
         }
-        if(partida.getNumErrores()==5){
+        if(partida.getNumErrores()==4){
             generarBrazoIzquierdo();
         }
-        if(partida.getNumErrores()==6){
+        if(partida.getNumErrores()==5){
             generarPiernaDerecha();
         }
-        if(partida.getNumErrores()==7){
+        if(partida.getNumErrores()==6){
             generarPiernaIzquierda();
+            
+            terminarPartidaPerdida();
+
         }
+        if(partida.compararOcultarPalabra()==partida.getPalabraSecreta()){
+            terminarPartidaGanar();
+        }
+
         labelPalabraSecreta.setText(partida.compararOcultarPalabra()); 
          
          
