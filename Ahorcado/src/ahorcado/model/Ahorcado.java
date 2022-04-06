@@ -27,7 +27,8 @@ public class Ahorcado {
     public final String[] palabras = {
         "prueba", "gato", "murcie"
         + "lago", "caballero", "esternocleidomastoideo", "perro", "frances", 
-        "canario", "telefono", "ordenador", "compilar", "televisor"
+        "canario", "telefono", "ordenador", "compilar", "televisor", "aguacate",
+        "guatemala", "hamburguesa"
     };//poner palabras en el String
 
     /**

@@ -65,6 +65,8 @@ public class FXMLDocumentController implements Initializable {
     GraphicsContext piernaDerecha;
     @FXML
     private Button buttonReiniciar;
+    @FXML
+    private Label labelTituloPalabraSecreta;
 
     /**
      * Metodo que inicializa el juego

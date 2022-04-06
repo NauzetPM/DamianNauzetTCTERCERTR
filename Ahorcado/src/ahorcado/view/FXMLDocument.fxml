@@ -18,7 +18,8 @@
         <ListView fx:id="listViewCaracteresIntroducidos" layoutX="454.0" layoutY="275.0" prefHeight="200.0" prefWidth="200.0" />
         <ListView fx:id="listViewPalabrasIntentadas" layoutX="813.0" layoutY="275.0" prefHeight="200.0" prefWidth="200.0" />
         <Canvas fx:id="canvasAhorcado" height="372.0" layoutX="39.0" layoutY="90.0" width="322.0" />
-        <Label fx:id="labelPalabraSecreta" layoutX="62.0" layoutY="502.0" prefHeight="24.0" prefWidth="214.0" />
+        <Label fx:id="labelPalabraSecreta" layoutX="49.0" layoutY="518.0" prefHeight="24.0" prefWidth="214.0" />
       <Button fx:id="buttonReiniciar" layoutX="691.0" layoutY="201.0" mnemonicParsing="false" onAction="#reinicio" text="Reiniciar" />
+      <Label fx:id="labelTituloPalabraSecreta" layoutX="49.0" layoutY="475.0" prefHeight="26.0" prefWidth="214.0" text="Palabra secreta" />
     </children>
 </AnchorPane>
