@@ -116,19 +116,20 @@ public class FXMLDocumentController implements Initializable {
     }
     
     public void generarBrazoIzquierdo(){
-        brazoIzquierdo.fillRect(80, 250, 5, 40);
+        brazoIzquierdo.fillRect(90, 240, 5, 20); //segunda parte en generarse
     }
     
     public void generarBrazoDerecho(){
-        brazoDerecho.fillRect(110, 250, 5, 40); //primera parte en generarse tras el cuerpo
+        brazoDerecho.setFill(Color.AQUA);
+        brazoDerecho.fillRect(110, 240, 5, 20); //primera parte en generarse tras el cuerpo
     }
     
-    public void generarPiernaIzquierda(){
-        piernaIzquierda.fillRect(80, 200, 5, 20);
+    public void generarPiernaIzquierda(){ 
+        piernaIzquierda.fillRect(90, 265, 5, 20); //cuarta parte en generarse
     }
     
     public void generarPiernaDerecha(){
-       piernaDerecha.fillRect(110, 270, 5, 40);
+       piernaDerecha.fillRect(110, 265, 5, 20); //tercera parte en generarse
     }
     public void terminarPartidaPerdida(){
             Perder.showAndWait();
