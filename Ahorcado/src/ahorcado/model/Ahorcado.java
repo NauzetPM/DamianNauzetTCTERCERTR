@@ -18,7 +18,8 @@ public class Ahorcado {
     public boolean victoria;
     private ArrayList<String> historialLetras; 
     public final String[] palabras={
-       "prueba"
+       "prueba", "gato", "murcie"
+            + "lago", "caballero", "esternocleidomastoideo", "perro", "frances", "canario", "telefono", "ordenador", "compilar", "televisor"
     };//poner palabras en el String
     
     /**

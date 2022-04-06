@@ -17,6 +17,6 @@
       <ListView fx:id="listViewCaracteresIntroducidos" layoutX="454.0" layoutY="275.0" prefHeight="200.0" prefWidth="200.0" />
       <ListView fx:id="listViewPalabrasIntentadas" layoutX="813.0" layoutY="275.0" prefHeight="200.0" prefWidth="200.0" />
       <Canvas fx:id="canvasAhorcado" height="372.0" layoutX="39.0" layoutY="90.0" width="322.0" />
-      <Label fx:id="labelPalabraSecreta" layoutX="62.0" layoutY="502.0" prefHeight="24.0" prefWidth="200.0" />
+      <Label fx:id="labelPalabraSecreta" layoutX="62.0" layoutY="502.0" prefHeight="24.0" prefWidth="214.0" />
     </children>
 </AnchorPane>
