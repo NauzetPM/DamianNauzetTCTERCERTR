@@ -14,6 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
@@ -49,6 +50,7 @@ public class FXMLDocumentController implements Initializable {
     private Label labelIntroduce;
 
     private Canvas visualAhorcado;
+    
     Alert Perder;
     Alert Ganar;
     Ahorcado partida;
@@ -60,6 +62,8 @@ public class FXMLDocumentController implements Initializable {
     GraphicsContext brazoDerecho;
     GraphicsContext piernaIzquierda;
     GraphicsContext piernaDerecha;
+    @FXML
+    private Button buttonReiniciar;
 
     /**
      * Metodo que inicializa el juego
@@ -90,6 +94,10 @@ public class FXMLDocumentController implements Initializable {
         canvasAhorcado.setFocusTraversable(true);
 
         generarAhorcado();
+    }
+    
+    public void reiniciar(){
+        
     }
 
     /**
