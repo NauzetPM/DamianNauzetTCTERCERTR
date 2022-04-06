@@ -35,6 +35,7 @@ and open the template in the editor.
 #labelPalabraSecreta{
     -fx-text-fill: black;
     -fx-border-color: white;
+    -fx-border-width: 5;
     -fx-alignment: center;
 }
 

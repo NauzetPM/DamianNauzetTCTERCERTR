@@ -69,6 +69,11 @@ public class FXMLDocumentController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
+        iniciar();
+    }
+    
+    public void iniciar(){
         partida = new Ahorcado();
         labelPalabraSecreta.setText(partida.compararOcultarPalabra());
         Perder = new Alert(Alert.AlertType.INFORMATION, "Perdiste la palabra secreta era " + partida.getPalabraSecreta());
@@ -161,18 +166,16 @@ public class FXMLDocumentController implements Initializable {
     }
 
     /**
-     * Metodo que limpia la pantalla al finalizar la partida
+     * Metodo que limpia la pantalla al finalizar la partida e inicia una nueva
      */
     public void limpiar() { //deberia estar en el modelo supuestamente
-        textFieldCaracteresAdivinar.disableProperty();
-        textFieldPalabraResolver.disableProperty();
-        listViewCaracteresIntroducidos.disableProperty();
-        listViewPalabrasIntentadas.disableProperty();
-        textFieldCaracteresAdivinar.setOpacity(0);
-        textFieldPalabraResolver.setOpacity(0);
-        listViewCaracteresIntroducidos.setOpacity(0);
-        listViewPalabrasIntentadas.setOpacity(0);
-        canvasAhorcado.setOpacity(0);
+        textFieldCaracteresAdivinar.clear();
+        textFieldPalabraResolver.clear();
+        listViewCaracteresIntroducidos.getItems().clear();
+        listViewPalabrasIntentadas.getItems().clear();
+        canvasAhorcado.getGraphicsContext2D().clearRect(39, 90, 322, 372);
+        
+        iniciar();
 
     }
 

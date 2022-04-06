@@ -26,7 +26,8 @@ public class Ahorcado {
     private ArrayList<String> historialLetras;
     public final String[] palabras = {
         "prueba", "gato", "murcie"
-        + "lago", "caballero", "esternocleidomastoideo", "perro", "frances", "canario", "telefono", "ordenador", "compilar", "televisor"
+        + "lago", "caballero", "esternocleidomastoideo", "perro", "frances", 
+        "canario", "telefono", "ordenador", "compilar", "televisor"
     };//poner palabras en el String
 
     /**
