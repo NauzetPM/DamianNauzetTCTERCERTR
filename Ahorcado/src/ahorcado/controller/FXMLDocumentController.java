@@ -76,7 +76,7 @@ public class FXMLDocumentController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         partida = new Ahorcado();
         labelPalabraSecreta.setText(partida.compararOcultarPalabra());
-        Perder = new Alert(Alert.AlertType.INFORMATION ,"Perdiste la palabra secreta era"+ partida.getPalabraSecreta());
+        Perder = new Alert(Alert.AlertType.INFORMATION ,"Perdiste la palabra secreta era "+ partida.getPalabraSecreta());
         Ganar = new Alert(Alert.AlertType.INFORMATION ,"Ganaste!!");
         
         gc = canvasAhorcado.getGraphicsContext2D();
