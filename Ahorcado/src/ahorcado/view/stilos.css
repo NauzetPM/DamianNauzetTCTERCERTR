@@ -5,7 +5,8 @@ and open the template in the editor.
 */
 /* 
     Created on : 01-abr-2022, 19:16:06
-    Author     : daw
+    Author     : JDamian
+    Author     : Nauzet
 */
 #labelTitulo{
     -fx-alignment: center;
@@ -28,7 +29,7 @@ and open the template in the editor.
     -fx-border-color: black;
     -fx-background-color: white;
     -fx-text-alignment: justify;
-    
+
 }
 
 #labelPalabraSecreta{

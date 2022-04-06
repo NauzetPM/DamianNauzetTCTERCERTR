@@ -6,28 +6,23 @@
 package ahorcado.controller;
 
 import ahorcado.model.Ahorcado;
-import com.sun.deploy.config.JREInfo;
-import static java.lang.System.gc;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.geometry.Insets;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.input.KeyCode;
-import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 
 /**
  *
- * @author daw
+ * @author JDamian
+ * @author Nauzet
  */
 public class FXMLDocumentController implements Initializable {
 
@@ -67,6 +62,7 @@ public class FXMLDocumentController implements Initializable {
     GraphicsContext piernaDerecha;
 
     /**
+     * Metodo que inicializa el juego
      *
      * @param url
      * @param rb
@@ -104,42 +100,69 @@ public class FXMLDocumentController implements Initializable {
 
     }
 
+    /**
+     * Metodo que genera la cabeza al fallar
+     */
     public void generarCabeza() {
         cabeza.fillRoundRect(92, 212, 20, 20, 20, 20);
     }
 
+    /**
+     * Metodo que genera el cuerpo al fallar
+     */
     public void generarCuerpo() {
         cuerpo.fillOval(92, 232, 20, 40);
     }
 
+    /**
+     * Metodo que genera el brazo izquierdo al fallar
+     */
     public void generarBrazoIzquierdo() {
         brazoIzquierdo.fillRect(90, 240, 5, 20); //segunda parte en generarse
     }
 
+    /**
+     * Metodo que genera el brazo derecho al fallar
+     */
     public void generarBrazoDerecho() {
         brazoDerecho.setFill(Color.AQUA);
         brazoDerecho.fillRect(110, 240, 5, 20); //primera parte en generarse tras el cuerpo
     }
 
+    /**
+     * Metodo que genera la pierna izquierda al fallar
+     */
     public void generarPiernaIzquierda() {
         piernaIzquierda.fillRect(90, 265, 5, 20); //cuarta parte en generarse
     }
 
+    /**
+     * Metodo que genera la pierna derecha al fallar
+     */
     public void generarPiernaDerecha() {
         piernaDerecha.fillRect(110, 265, 5, 20); //tercera parte en generarse
     }
 
+    /**
+     * Metodo que termina la partida al perder y mustra una ventana de "derrota"
+     */
     public void terminarPartidaPerdida() {
         Perder.showAndWait();
         limpiar();
-
     }
 
+    /**
+     * Metodo que termina la partida al ganar y muestra una pantalla de
+     * "victoria"
+     */
     public void terminarPartidaGanar() {
         Ganar.showAndWait();
         limpiar();
     }
 
+    /**
+     * Metodo que limpia la pantalla al finalizar la partida
+     */
     public void limpiar() { //deberia estar en el modelo supuestamente
         textFieldCaracteresAdivinar.disableProperty();
         textFieldPalabraResolver.disableProperty();
@@ -156,7 +179,7 @@ public class FXMLDocumentController implements Initializable {
     /**
      * Metodo que guarda el texto introducido en su lista correspondiente
      *
-     * @param event
+     * @param event Se activa al pulsar la tecla "enter"
      */
     @FXML
     private void ejecutarEnterCaracter(ActionEvent event) {
