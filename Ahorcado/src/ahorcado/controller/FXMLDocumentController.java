@@ -18,6 +18,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 
 /**
@@ -74,7 +75,7 @@ public class FXMLDocumentController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
-        iniciar();
+        limpiar();
     }
     
     public void iniciar(){
@@ -96,10 +97,6 @@ public class FXMLDocumentController implements Initializable {
         generarAhorcado();
     }
     
-    public void reiniciar(){
-        
-    }
-
     /**
      * Metodo que genera la escena inicial del ahorcado
      */
@@ -267,6 +264,15 @@ public class FXMLDocumentController implements Initializable {
         labelPalabraSecreta.setText(partida.compararOcultarPalabra());
 
         textFieldPalabraResolver.clear();
+    }
+    /**
+     * Boton que al pulsarlo reinicia el juego
+     * @param event pulsar el boton
+     */
+    @FXML
+    private void reinicio(ActionEvent event) {
+        limpiar();
+
     }
 
 }

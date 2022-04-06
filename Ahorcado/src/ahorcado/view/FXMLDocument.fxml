@@ -7,7 +7,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="626.0" prefWidth="1057.0" stylesheets="@stilos.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ahorcado.controller.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="626.0" prefWidth="1057.0" stylesheets="@stilos.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ahorcado.controller.FXMLDocumentController">
     <children>
         <Label fx:id="labelTitulo" layoutX="39.0" layoutY="31.0" minHeight="16" minWidth="69" prefHeight="24.0" prefWidth="117.0" text="Ahorcado" />
         <TextField fx:id="textFieldCaracteresAdivinar" layoutX="454.0" layoutY="107.0" onAction="#ejecutarEnterCaracter" prefHeight="24.0" prefWidth="200.0" />
@@ -19,6 +19,6 @@
         <ListView fx:id="listViewPalabrasIntentadas" layoutX="813.0" layoutY="275.0" prefHeight="200.0" prefWidth="200.0" />
         <Canvas fx:id="canvasAhorcado" height="372.0" layoutX="39.0" layoutY="90.0" width="322.0" />
         <Label fx:id="labelPalabraSecreta" layoutX="62.0" layoutY="502.0" prefHeight="24.0" prefWidth="214.0" />
-      <Button fx:id="buttonReiniciar" layoutX="691.0" layoutY="201.0" mnemonicParsing="false" text="Reiniciar" />
+      <Button fx:id="buttonReiniciar" layoutX="691.0" layoutY="201.0" mnemonicParsing="false" onAction="#reinicio" text="Reiniciar" />
     </children>
 </AnchorPane>
